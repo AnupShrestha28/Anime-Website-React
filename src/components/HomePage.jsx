@@ -9,11 +9,9 @@ const HomePage = () => {
   const {
     handleSubmit,
     search,
-    searchAnime,
     handleChange,
     getUpcomingAnime,
     getAiringAnime,
-    getPopularAnime,
   } = useGlobalContext();
 
   const [rendered, setRendered] = useState("popular");
@@ -53,7 +51,7 @@ const HomePage = () => {
                 setRendered("popular");
               }}
             >
-              Popular
+              Popular <i className="fas fa-fire"></i>
             </button>
           </div>
 
@@ -107,6 +105,10 @@ const HomePageStyled = styled.div`
     width: 60%;
     margin: 0 auto;
     transition: all 0.4s ease-in-out;
+
+    @media screen and(max-width: 1530px) {
+      width: 95%;
+    }
 
     .logo {
       display: flex;

@@ -132,7 +132,7 @@ const AnimeItem = () => {
       <h3 className="title">Trailer</h3>
 
       <div className="trailer-con">
-        {trailer?.embed_url && (
+        {trailer?.embed_url ? (
           <iframe
             src={trailer?.embed_url}
             title="Inline Frame Example"
@@ -141,6 +141,8 @@ const AnimeItem = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+        ) : (
+          <h3>Trailer and Characters are not available</h3>
         )}
       </div>
 
@@ -283,7 +285,7 @@ const AnimeItemStyled = styled.div`
         color: #27ae60;
       }
 
-      &:hover{
+      &:hover {
         transform: translateY(-5px);
       }
     }
